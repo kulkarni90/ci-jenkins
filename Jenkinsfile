@@ -13,11 +13,11 @@ pipeline {
                 sh ' mvn -f pom.xml clean install'  
                  }
           }
-            post {
-                success {
-                    echo 'deploying'
-                }
-            }
-        }
-    }
+            stage ('Post'){
+                    steps { 
+                        echo 'deploying'
+                      }
+                  }
+             }
+       }
 
