@@ -13,6 +13,22 @@ pipeline {
                 sh ' mvn -f pom.xml clean install'  
                  }
           }
+        stage('Unit Test') {
+            steps {
+                 sh 'maven test'
+                }
+            }
+		stage('Integration Test') {
+            steps {
+                  sh 'maven verify -DskipUnitTests -Parq-wildfly-swarm '
+                }
+            }
+        stage('Deploying build'){
+            steps {
+                sh 'maven Deploy'
+                }
+		}
+    }	
             stage ('Post'){
                     steps { 
                         echo 'deploying'
