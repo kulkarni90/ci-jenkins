@@ -31,7 +31,7 @@ pipeline {
     }	
             stage ('Post'){
                     steps { 
-                        echo 'deploying'
+                        echo 'sent to mail'
                       }
                   }
              }
