@@ -27,13 +27,7 @@ pipeline {
             steps {
                 sh 'maven Deploy'
                 }
-		}
-    }	
-            stage ('Post'){
-                    steps { 
-                        echo 'sent mail'
-                      }
-                  }
-             }
-       
+	    }
+      }	
+}
 
