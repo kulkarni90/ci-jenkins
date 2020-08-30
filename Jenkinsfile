@@ -15,17 +15,17 @@ pipeline {
           }
         stage('Unit Test') {
             steps {
-                 sh 'maven test'
+                 sh 'mvn test'
                 }
             }
 		stage('Integration Test') {
             steps {
-                  sh 'maven verify -DskipUnitTests -Parq-wildfly-swarm '
+                  sh 'mvn verify -DskipUnitTests -Parq-wildfly-swarm '
                 }
             }
         stage('Deploying build'){
             steps {
-                sh 'maven Deploy'
+                sh 'mvn Deploy'
                 }
 	    }
       }	
